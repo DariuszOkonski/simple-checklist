@@ -25,11 +25,13 @@ output_frame.pack()
 button_frame.pack()
 
 # input frame layout ============================
-list_entry = tkinter.Entry(input_frame)
-list_add_button = tkinter.Button(input_frame, text='Add Item')
+list_entry = tkinter.Entry(input_frame, width=35, borderwidth=3, font=my_font)
+list_add_button = tkinter.Button(input_frame, text='Add Item', borderwidth=2, font=my_font, bg=button_color)
 
 list_entry.grid(row=0, column=0)
 list_add_button.grid(row=0, column=1)
+
+
 
 
 
