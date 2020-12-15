@@ -7,7 +7,7 @@ root.geometry('400x400')
 root.resizable(0, 0)
 
 # define fonts and colors
-my_font = ('Arial', 12)
+my_font = ('Arial', 11)
 root_color = '#6c1cbc'
 button_color = '#e2cff4'
 root.config(bg=root_color)
@@ -31,7 +31,9 @@ list_add_button = tkinter.Button(input_frame, text='Add Item', borderwidth=2, fo
 list_entry.grid(row=0, column=0)
 list_add_button.grid(row=0, column=1)
 
-
+# output frame layout ===========================
+my_listbox = tkinter.Listbox(output_frame, height=15, width=45, borderwidth=3, font=my_font)
+my_listbox.grid(row=0, column=0)
 
 
 
