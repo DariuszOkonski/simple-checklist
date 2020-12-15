@@ -35,6 +35,16 @@ list_add_button.grid(row=0, column=1)
 my_listbox = tkinter.Listbox(output_frame, height=15, width=45, borderwidth=3, font=my_font)
 my_listbox.grid(row=0, column=0)
 
+# button frame layout ===========================
+list_remove_button = tkinter.Button(button_frame, text="Remove Item", borderwidth=2, font=my_font, bg=button_color)
+list_clear_button = tkinter.Button(button_frame, text="Clear List", borderwidth=2, font=my_font, bg=button_color)
+save_button = tkinter.Button(button_frame, text="Save List", borderwidth=2, font=my_font, bg=button_color)
+quit_button = tkinter.Button(button_frame, text="Quit", borderwidth=2, font=my_font, bg=button_color, command=root.destroy)
+
+list_remove_button.grid(row=0, column=0)
+list_clear_button.grid(row=0, column=1)
+save_button.grid(row=0, column=2)
+quit_button.grid(row=0, column=3)
 
 
 
