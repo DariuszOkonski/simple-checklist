@@ -1,4 +1,5 @@
 import tkinter
+from tkinter import END
 
 root = tkinter.Tk()
 root.title('Simple Checklist')
@@ -13,6 +14,9 @@ button_color = '#e2cff4'
 root.config(bg=root_color)
 
 # define functions
+def add_item():
+    my_listbox.insert(END, list_entry.get())
+    list_entry.delete(0, END)
 
 # define layout
 # create frames
@@ -26,14 +30,17 @@ button_frame.pack()
 
 # input frame layout ============================
 list_entry = tkinter.Entry(input_frame, width=35, borderwidth=3, font=my_font)
-list_add_button = tkinter.Button(input_frame, text='Add Item', borderwidth=2, font=my_font, bg=button_color)
+list_add_button = tkinter.Button(input_frame, text='Add Item', borderwidth=2, font=my_font, bg=button_color, command=add_item)
 
 list_entry.grid(row=0, column=0, padx=5, pady=5)
 list_add_button.grid(row=0, column=1, padx=5, pady=5, ipadx=5)
 
 # output frame layout ===========================
+my_scrollbar = tkinter.Scrollbar(output_frame)
 my_listbox = tkinter.Listbox(output_frame, height=17, width=45, borderwidth=3, font=my_font)
+
 my_listbox.grid(row=0, column=0)
+my_scrollbar.grid(row=0, column=1, sticky="NS")
 
 # button frame layout ===========================
 list_remove_button = tkinter.Button(button_frame, text="Remove Item", borderwidth=2, font=my_font, bg=button_color)
